@@ -1,0 +1,13 @@
+<form #miFormulario="ngForm" (ngSubmit)="adivinarNumero()" autocomplete="off">
+    <div class="col-lg-6">
+        <input ngModel name="numero" min="1" max="10000000000" required type="number" class="form-control" placeholder="Solo Caracteres Númericos" />
+
+        <span class="form-text text-danger" *ngIf="validacion()">
+                El Número debe estar comprendido entre 1 y 10000000000
+            </span>
+    </div>
+    <div class="col-lg-6 text-end">
+
+        <button type="submit" [disabled]="miFormulario.invalid" class="btn btn-outline-primary mt-3">Adivinar</button>
+    </div>
+</form>
